@@ -19,8 +19,6 @@ services:
       - DEBUG=1
       - SECRET_KEY=0930jd30j9jd09j109fj01j9f
       - ALLOWED_HOSTS=localhost,127.0.0.1
-      - CELERY_BROKER=redis://redis:6379/0
-      - CELERY_BACKEND=redis://redis:6379/0
     depends_on:
       - redis
 
@@ -28,6 +26,7 @@ services:
     container_name: celery
     build:
       context: ./dcelery
+    command: celery --app=dcelery worker -l INFO
     volumes:
       - ./dcelery:/usr/src/app/
     environment:
