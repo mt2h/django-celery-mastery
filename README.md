@@ -55,4 +55,11 @@ Introduccing
 ![Celery Flow](./img/3.png)
 ![Celery Flow](./img/4.png)
 ![Celery Flow](./img/5.png)
+
+Tasks Routing
+
 ![Celery Flow](./img/6.png)
+
+Priority
+
+![Celery Flow](./img/7.png)
