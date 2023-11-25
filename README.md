@@ -45,3 +45,14 @@ docker-compose up -d --build
 ```sh
 ./manage.py startapp cworker
 ```
+
+## Celery Flow
+
+Introduccing
+
+![Celery Flow](./img/1.png)
+![Celery Flow](./img/2.png)
+![Celery Flow](./img/3.png)
+![Celery Flow](./img/4.png)
+![Celery Flow](./img/5.png)
+![Celery Flow](./img/6.png)
