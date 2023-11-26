@@ -9,7 +9,7 @@ from celery import shared_task
 #def task2():
 #    return
 
-@shared_task
+@shared_task(task_rate_limit='10/m')
 def tp1(queue='celery'):
     time.sleep(3)
     return

@@ -63,3 +63,30 @@ Tasks Routing
 Priority
 
 ![Celery Flow](./img/7.png)
+
+Task 
+
+```sh
+./manage.py shell
+from celery import group
+from newapp.tasks import tp1, tp2, tp3, tp4
+tp1.delay()
+tp2.delay()
+tp3.delay()
+tp4.delay()
+```
+
+```sh
+./manage.py shell
+from celery import group
+from newapp.tasks import tp1, tp2, tp3, tp4
+tasks_group = group(tp1.s(), tp2.s(), tp3.s(), tp4.s())
+tasks_group.apply_async()
+```
+
+```sh
+from celery import chain #depend result before
+from newapp.tasks import tp1, tp2, tp3
+tasks_chain = chain(tp1.s(), tp2.s(), tp3.s()) #argument one task pass to other next task
+tasks_chain.apply_async()
+```
