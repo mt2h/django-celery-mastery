@@ -113,10 +113,12 @@ t3.apply_async(priority=9)
 ```
 
 ```python
+from dcelery.celery import t1
 t1.apply_async(args=[5,10], kargs={"message": "The sum is"})
 ```
 
 ```python
+from dcelery.celery import t1
 result = t1.apply_async(args=[5,10], kargs={"message": "The sum is"})
 print(result.get())
 ```

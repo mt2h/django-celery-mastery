@@ -37,7 +37,7 @@ app.conf.worker_concurrency = 1
 
 @app.task(queue='tasks')
 def t1(a, b, message=None):
-    #time.sleep(3)
+    time.sleep(3)
     result = a + b
     if message:
         result = f"{message}: {result}"
@@ -82,3 +82,13 @@ def test():
     exception = result.get(propagate=False)
     if exception:
         print("An exception occurred during task execution:", str(exception))
+
+def execute_sync():
+    result = t1.apply_async(args=[5,10], kwargs={"message":"The sum is"})
+    task_result = result.get()
+    print("Task is running syunchronously")
+
+def execute_async():
+    result = t1.apply_async(args=[5,10], kwargs={"message":"The sum is"})
+    print("Task is running asyunchronously")
+    print("Task ID:", result.task_id)
