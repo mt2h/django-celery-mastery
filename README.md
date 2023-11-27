@@ -77,6 +77,9 @@ Tests
 
 ```sh
 ./manage.py shell
+```
+
+```python
 from celery import group
 from newapp.tasks import tp1, tp2, tp3, tp4
 tp1.delay()
@@ -85,22 +88,21 @@ tp3.delay()
 tp4.delay()
 ```
 
-```sh
-./manage.py shell
+```python
 from celery import group
 from newapp.tasks import tp1, tp2, tp3, tp4
 tasks_group = group(tp1.s(), tp2.s(), tp3.s(), tp4.s())
 tasks_group.apply_async()
 ```
 
-```sh
+```python
 from celery import chain #depend result before
 from newapp.tasks import tp1, tp2, tp3
 tasks_chain = chain(tp1.s(), tp2.s(), tp3.s()) #argument one task pass to other next task
 tasks_chain.apply_async()
 ```
 
-```sh
+```python
 from dcelery.celery import t1,t2,t3
 t2.apply_async(priority=5)
 t1.apply_async(priority=6)
@@ -108,5 +110,13 @@ t3.apply_async(priority=9)
 t2.apply_async(priority=5)
 t1.apply_async(priority=6)
 t3.apply_async(priority=9)
-quit()
+```
+
+```python
+t1.apply_async(args=[5,10], kargs={"message": "The sum is"})
+```
+
+```python
+result = t1.apply_async(args=[5,10], kargs={"message": "The sum is"})
+print(result.get())
 ```
