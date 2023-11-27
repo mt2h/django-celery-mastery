@@ -30,6 +30,7 @@ django-admin startproject dcelery
 cd dcelery/
 pip install celery==5.3.0
 pip install redis==4.5.5
+pip install pika==1.3.2
 
 pip freeze > requirements.txt
 ```
@@ -37,6 +38,7 @@ pip freeze > requirements.txt
 ## Deploy with Docker Compose
 
 ```bash
+docker stop $(docker ps -aq) && docker rm $(docker ps -aq) && docker rmi $(docker images -aq)
 docker-compose up -d --build
 ```
 
@@ -64,7 +66,14 @@ Priority
 
 ![Celery Flow](./img/7.png)
 
-Task 
+Commands
+
+```sh
+celery -A dcelery inspect active
+celery -A dcelery inspect active_queues
+```
+
+Tests
 
 ```sh
 ./manage.py shell
@@ -89,4 +98,15 @@ from celery import chain #depend result before
 from newapp.tasks import tp1, tp2, tp3
 tasks_chain = chain(tp1.s(), tp2.s(), tp3.s()) #argument one task pass to other next task
 tasks_chain.apply_async()
+```
+
+```sh
+from dcelery.celery import t1,t2,t3
+t2.apply_async(priority=5)
+t1.apply_async(priority=6)
+t3.apply_async(priority=9)
+t2.apply_async(priority=5)
+t1.apply_async(priority=6)
+t3.apply_async(priority=9)
+quit()
 ```
