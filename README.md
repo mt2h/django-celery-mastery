@@ -124,16 +124,39 @@ print(result.get())
 ```
 
 ```python
-from dcelery.celery_tasks.ex_try_except import my_task
+from dcelery.celery_tasks.ex1_try_except import my_task
 my_task.delay()
 ```
 
 ```python
-from dcelery.celery_tasks.ex_try_task_class import my_task
+from dcelery.celery_tasks.ex2_try_task_class import my_task
 my_task.delay()
 ```
 
 ```python
-from dcelery.celery_tasks.ex_auto_retry import my_task
+from dcelery.celery_tasks.ex3_auto_retry import my_task
 my_task.delay()
+```
+
+```python
+from dcelery.celery_tasks.ex4_error_handling_groups import run_tasks
+run_tasks()
+```
+
+```python
+from dcelery.celery_tasks.ex5_error_handling_chain import run_task_chain
+run_task_chain()
+```
+
+```python
+from dcelery.celery_tasks.ex6_dead_letter_queue import run_task_group
+run_task_group()
+```
+
+```python
+from dcelery.celery_tasks.ex7_task_timeouts_revoking import long_running_task
+long_running_task.delay()
+
+from dcelery.celery_tasks.ex7_task_timeouts_revoking import execute_task_examples
+execute_task_examples()
 ```
