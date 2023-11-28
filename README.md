@@ -122,3 +122,18 @@ from dcelery.celery import t1
 result = t1.apply_async(args=[5,10], kargs={"message": "The sum is"})
 print(result.get())
 ```
+
+```python
+from dcelery.celery_tasks.ex_try_except import my_task
+my_task.delay()
+```
+
+```python
+from dcelery.celery_tasks.ex_try_task_class import my_task
+my_task.delay()
+```
+
+```python
+from dcelery.celery_tasks.ex_auto_retry import my_task
+my_task.delay()
+```
