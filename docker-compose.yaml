@@ -47,7 +47,7 @@ services:
     #command: celery --app=dcelery worker -l INFO  
     #command: celery --app=dcelery worker -l INFO -Q queue1
     #command: celery --app=dcelery worker -l INFO -Q celery,celery:1,celery:2,celery:3
-    command: celery --app=dcelery worker -l INFO -Q tasks,dead_letter
+    command: celery --app=dcelery worker -l INFO -Q tasks,dead_letter -E
     volumes:
       - ./dcelery:/usr/src/app/
     environment:

@@ -2,7 +2,7 @@ import logging
 from celery import Task
 from dcelery.celery_config import app
 
-logging.basicConfig(filename='app.log', level=logging.ERROR, format='%(actime)s %(levelname)s %(message)s')
+logging.basicConfig(filename='app.log', level=logging.ERROR, format='%(asctime)s %(levelname)s %(message)s')
 
 class CustomTask(Task):
     def on_failure(self, exc, task_id, args, kwargs, einfo):

@@ -1,7 +1,7 @@
 import logging
 from dcelery.celery_config import app
 
-logging.basicConfig(filename='app.log', level=logging.ERROR, format='%(actime)s %(levelname)s %(message)s')
+logging.basicConfig(filename='app.log', level=logging.ERROR, format='%(asctime)s %(levelname)s %(message)s')
 
 #@app.task(queue='tasks')
 #def my_task():

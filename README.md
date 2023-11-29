@@ -160,3 +160,28 @@ long_running_task.delay()
 from dcelery.celery_tasks.ex7_task_timeouts_revoking import execute_task_examples
 execute_task_examples()
 ```
+
+```python
+from dcelery.celery_tasks.ex8_linking_result_callbacks import run_task
+run_task()
+```
+
+```python
+from dcelery.celery_tasks.ex9_task_signals_graceful_shutdown_and_cleanup import run_task
+run_task()
+```
+
+## Sentry
+
+![Sentry](./img/8.png)
+![Sentry](./img/9.png)
+
+
+```bash
+pip install --upgrade sentry-sdk[django]
+```
+
+```python
+from dcelery.celery_tasks.ex10_Error_Tracking_and_Monitoring_with_Sentry import divide_numbers
+divide_numbers.delay(10, 0)
+```
