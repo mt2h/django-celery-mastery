@@ -2,4 +2,5 @@ env39/
 db.sqlite3
 .env
 __pycache__
-dcelery/app.log
+app.log
+env_vars.txt

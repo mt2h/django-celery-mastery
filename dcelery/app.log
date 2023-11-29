@@ -2,3 +2,31 @@
 2023-11-29 01:57:38,993 INFO /usr/src/app/dcelery/celery_tasks/ex3_auto_retry.py changed, reloading.
 2023-11-29 01:57:39,878 INFO Watching for file changes with StatReloader
 2023-11-29 01:58:49,574 INFO Watching for file changes with StatReloader
+2023-11-29 03:09:00,954 INFO Watching for file changes with StatReloader
+2023-11-29 04:01:38,621 INFO Watching for file changes with StatReloader
+2023-11-29 04:03:29,379 INFO Watching for file changes with StatReloader
+2023-11-29 04:04:29,786 INFO Watching for file changes with StatReloader
+2023-11-29 04:05:20,414 INFO Watching for file changes with StatReloader
+2023-11-29 04:26:34,185 INFO /usr/src/app/dcelery/settings.py changed, reloading.
+2023-11-29 04:26:34,955 INFO Watching for file changes with StatReloader
+2023-11-29 04:26:38,104 INFO /usr/src/app/dcelery/settings.py changed, reloading.
+2023-11-29 04:26:38,893 INFO Watching for file changes with StatReloader
+2023-11-29 04:28:43,064 INFO Watching for file changes with StatReloader
+2023-11-29 04:31:14,055 WARNING Not Found: /favicon.ico
+2023-11-29 04:41:51,689 INFO /usr/src/app/dcelery/celery_tasks/ex13_task_schedule_crontab.py changed, reloading.
+2023-11-29 04:41:52,591 INFO Watching for file changes with StatReloader
+2023-11-29 04:43:11,320 INFO Watching for file changes with StatReloader
+2023-11-29 04:44:27,366 INFO /usr/src/app/dcelery/settings.py changed, reloading.
+2023-11-29 04:44:28,241 INFO Watching for file changes with StatReloader
+2023-11-29 04:45:15,365 INFO Watching for file changes with StatReloader
+2023-11-29 04:47:32,207 INFO /usr/src/app/dcelery/settings.py changed, reloading.
+2023-11-29 04:47:33,155 INFO Watching for file changes with StatReloader
+2023-11-29 04:47:43,073 INFO Watching for file changes with StatReloader
+2023-11-29 04:48:57,770 INFO Watching for file changes with StatReloader
+2023-11-29 04:52:49,162 INFO Watching for file changes with StatReloader
+2023-11-29 05:01:39,532 INFO /usr/src/app/dcelery/celery_config.py changed, reloading.
+2023-11-29 05:01:40,675 INFO Watching for file changes with StatReloader
+2023-11-29 05:05:52,420 INFO Watching for file changes with StatReloader
+2023-11-29 05:36:45,759 INFO Watching for file changes with StatReloader
+2023-11-29 05:38:21,119 INFO Watching for file changes with StatReloader
+2023-11-29 05:51:38,980 INFO Watching for file changes with StatReloader

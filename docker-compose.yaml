@@ -47,7 +47,7 @@ services:
     #command: celery --app=dcelery worker -l INFO  
     #command: celery --app=dcelery worker -l INFO -Q queue1
     #command: celery --app=dcelery worker -l INFO -Q celery,celery:1,celery:2,celery:3
-    command: celery --app=dcelery worker -l INFO -Q tasks,dead_letter -E
+    command: celery --app=dcelery worker -l INFO -Q tasks,dead_letter -E -B
     volumes:
       - ./dcelery:/usr/src/app/
     environment:
@@ -59,14 +59,17 @@ services:
       - django
       - rabbitmq
 
-  #celery2:
-  #  container_name: celery2
-  #  build:
-  #    context: ./celeryworker
-  #    dockerfile: Dockerfile
-  #  command: celery -A celerytask worker --loglevel=INFO -Q queue2
-  #  volumes:
-  #    - ./celeryworker:/usr/src/app/
+  celery2:
+    container_name: celery2
+    build:
+      context: ./celeryworker
+      dockerfile: Dockerfile
+    #command: celery -A celerytask worker --loglevel=INFO -Q queue2
+    command: celery -A celerytask worker --loglevel=INFO -B
+    volumes:
+       - ./celeryworker:/usr/src/app/
+    env_file:
+      - ./celeryworker/env_vars.txt
   #  depends_on:
   #    - redis
   #    - django

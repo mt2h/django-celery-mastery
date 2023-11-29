@@ -31,6 +31,7 @@ cd dcelery/
 pip install celery==5.3.0
 pip install redis==4.5.5
 pip install pika==1.3.2
+pip install django-celery-beat==2.5.0
 
 pip freeze > requirements.txt
 ```
@@ -185,3 +186,10 @@ pip install --upgrade sentry-sdk[django]
 from dcelery.celery_tasks.ex10_Error_Tracking_and_Monitoring_with_Sentry import divide_numbers
 divide_numbers.delay(10, 0)
 ```
+
+## Scheduler Django Celery Beat
+
+![Scheduler Django Celery Beat](./img/10.png)
+![Scheduler Django Celery Beat](./img/11.png)
+![Scheduler Django Celery Beat](./img/12.png)
+![Scheduler Django Celery Beat](./img/13.png)

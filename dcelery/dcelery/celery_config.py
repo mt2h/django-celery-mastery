@@ -54,7 +54,7 @@ if os.path.exists(task_folder) and os.path.isdir(task_folder):
 
     app.autodiscover_tasks(task_modules)
 
-#app.autodiscover_tasks()
+app.autodiscover_tasks()
 
 #@app.task(queue='tasks')
 #def t1(a, b, message=None):
